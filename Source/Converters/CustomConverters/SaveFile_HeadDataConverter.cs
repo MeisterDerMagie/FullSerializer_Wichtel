@@ -20,7 +20,7 @@ public class SaveFile_HeadDataConverter : fsConverter
         
         //date
         fsData dateData;
-        Serializer.TrySerialize(headDataInstance.timeStamp, out dateData);
+        Serializer.TrySerialize(headDataInstance.TimeStamp, out dateData);
         serialized.AsDictionary["date"] = dateData;
         
         //playtime
@@ -51,7 +51,7 @@ public class SaveFile_HeadDataConverter : fsConverter
         fsData dateData = data.AsDictionary["date"];
         DateTime dateTime = DateTime.Now;
         Serializer.TryDeserialize(dateData, ref dateTime);
-        headDataInstance.timeStamp = dateTime;
+        headDataInstance.TimeStamp = dateTime;
         
         //playtime
         fsData playtimeData = data.AsDictionary["playtime"];
